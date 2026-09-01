@@ -5,18 +5,20 @@
     <meta charset='utf-8' />
     <script src='js/main.js'></script>
     <link rel='stylesheet' href='css/main.css' />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- get rid of favicon error -->
     <link rel='icon' href='data:;base64,iVBORw0KGgo=' />
   </head>
   <body>
-    <form>
-      <label for="yourname">What's your name? </label>
+    <form class = "container">
+      <label for="yourname" id="labels">What's your name? </label>
       <input type='text' id='yourname'>
       <br>
       <br>
-      <label for="assignment">Assignment Type: </label>
-      <select name="assignment-type" id="assignment">
+      <label for="assignment" id="labels">Assignment Type: </label>
+      <select name="assignment-type" id="select">
         <option value="">--Please choose an option--</option>
         <option value="a">hw</option>
         <option value="b">quiz</option>
@@ -25,8 +27,8 @@
       </select>
       <br>
       <br>
-      <label for="grade">Letter Grade: </label>
-      <select name="grade-letter" id="grade">
+      <label for="grade" id="labels">Letter Grade: </label>
+      <select name="grade-letter" id="select">
         <option value="">--Please choose an option--</option>
         <option value="a">a</option>
         <option value="b">b</option>
@@ -35,7 +37,7 @@
       </select>
       <br>
       <br>
-      <label for="cmts">Any comments? </label>
+      <label for="cmts" id="labels">Any comments? </label>
       <textarea id="cmts" name="comments"></textarea>
       <br>
       <br>
