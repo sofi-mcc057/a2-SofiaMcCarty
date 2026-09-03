@@ -40,7 +40,6 @@ const handlePost = function( request, response ) {
 
   request.on( 'end', function() {
     let object = ( JSON.parse( dataString ) )
-    // ... do something with the data here!!!
     if (object.gradeletter == "a"){
       object.GPA = 4.0
     } else if (object.gradeletter == "b"){
@@ -53,7 +52,6 @@ const handlePost = function( request, response ) {
     appdata.push(object)
     response.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
 
-    // change this to incorporate data
     response.end(JSON.stringify(appdata))
   })
 }

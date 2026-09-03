@@ -9,8 +9,14 @@ body {
   background-color: lightblue;
 }
 
-button{
+.btn{
   width: 100px;
+  background-color: navy;
+  border: none;
+  border-radius: 8px;
+  color:aliceblue;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
 }
 
 #select{
@@ -24,10 +30,24 @@ button{
   font-style: normal;
 }
 
-button{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ul, li{
+  color: navy;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight:lighter;
 }
 
-ul, li{
-  color: black;
+li .listlabel, ul .listlabel{
+  color: navy;
+  font-family: monospace;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.values{
+  color: navy;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight:lighter;
+  text-decoration: underline;
 }

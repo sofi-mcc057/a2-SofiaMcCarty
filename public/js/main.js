@@ -29,12 +29,17 @@ const submit = async function( event ) {
   ul.innerHTML = ''
   for (let item of arr){
     const li = document.createElement('li')
+    li.innerHTML = `<span class="listlabel">Name:</span> <span class="values">${item.yourname}</span><br>
+                <span class="listlabel">Assignment Type:</span> <span class="values">${item.assignmenttype}</span><br>
+                <span class="listlabel">Grade:</span> <span class="values">${item.gradeletter}</span><br>
+                <span class="listlabel">Comments:</span> <span class="values">${item.cmts}</span><br>
+                <span class="listlabel">GPA:</span> <span class="values">${item.GPA}</span>`;
 
-    li.innerText += "Name: " + item.yourname
-    li.innerText += " Assignment Type: " + item.assignmenttype
-    li.innerText += " Grade: " + item.gradeletter
-    li.innerText += " Comments: " + item.cmts
-    li.innerText += " GPA: " + item.GPA
+    // li.innerText += "Name: " + item.yourname
+    // li.innerText += " Assignment Type: " + item.assignmenttype
+    // li.innerText += " Grade: " + item.gradeletter
+    // li.innerText += " Comments: " + item.cmts
+    // li.innerText += " GPA: " + item.GPA
     ul.appendChild(li)
   }
   console.log(arr)
