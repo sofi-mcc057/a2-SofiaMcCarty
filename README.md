@@ -91,10 +91,10 @@ Sample Readme (delete the above when you're ready to submit, and modify the belo
 ---
 
 ## Your Web Application Title
-Include a very brief summary of your project here. Be sure to include the CSS positioning technique you used, and any required instructions to use your application.
+My project is an assignment tracker. You fill out the form with the assignment type and grade, and it responds by telling you your gpa based on this grade (4.0, 3.0, etc). I used a css grid to style my application, and provided rules for styling the text, elements, and buttons.
 
 ## Technical Achievements
-- **Tech Achievement 1**: Using a combination of...
+- **Tech Achievement 1**: I created a single page app that always shows the current state of the data, updated when items are submitted or deleted
 
 ### Design/Evaluation Achievements
 - **Design Achievement 1**: 

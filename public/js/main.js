@@ -7,8 +7,6 @@ const submit = async function( event ) {
   // remains to this day
   event.preventDefault()
 
-  // const form = document.querySelector('#myForm')  
-
   const name = document.querySelector( '#yourname' )
   const type = document.querySelector('#assignmenttype')
   const grade = document.querySelector('#gradeletter')
@@ -33,21 +31,28 @@ const submit = async function( event ) {
                 <span class="listlabel">Assignment Type:</span> <span class="values">${item.assignmenttype}</span><br>
                 <span class="listlabel">Grade:</span> <span class="values">${item.gradeletter}</span><br>
                 <span class="listlabel">Comments:</span> <span class="values">${item.cmts}</span><br>
-                <span class="listlabel">GPA:</span> <span class="values">${item.GPA}</span>`;
-
-    // li.innerText += "Name: " + item.yourname
-    // li.innerText += " Assignment Type: " + item.assignmenttype
-    // li.innerText += " Grade: " + item.gradeletter
-    // li.innerText += " Comments: " + item.cmts
-    // li.innerText += " GPA: " + item.GPA
+                <span class="listlabel">GPA:</span> <span class="values">${item.GPA}</span><br>
+                <button class = deletebtn id="${item.id}" onclick="remove(event, ${item.id})">delete</button>`;
     ul.appendChild(li)
   }
   console.log(arr)
   
 }
 
+const remove = async function ( event ){
+  event.preventDefault()
+  const itemId = event.currentTarget.getAttribute('id')
+  const data = {id: itemId}
+  const response = await fetch(`/${itemId}`, {
+    method: 'DELETE',
+    body: JSON.stringify(data)
+  })
+  event.target.parentElement.remove()
+ 
+}
+
 window.onload = function() {
-  const button = document.querySelector('button')
+  const button = document.querySelector('.btn')
   button.onclick = submit
   ul = document.createElement('ul')
   document.body.appendChild(ul)

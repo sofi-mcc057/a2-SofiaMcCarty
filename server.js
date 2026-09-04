@@ -18,6 +18,8 @@ const server = http.createServer( function( request,response ) {
     handleGet( request, response )    
   }else if( request.method === 'POST' ){
     handlePost( request, response ) 
+  } else if (request.method === 'DELETE'){
+    handleDelete(request, response)
   }
 })
 
@@ -46,14 +48,27 @@ const handlePost = function( request, response ) {
       object.GPA = 3.0
     } else if (object.gradeletter == "c"){
       object.GPA = 2.0
-    } else{
+    } else if (object.gradeletter == 'd'){
       object.GPA = 1.0
     }
+    object.id = Date.now()
     appdata.push(object)
     response.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
 
     response.end(JSON.stringify(appdata))
   })
+}
+
+const handleDelete = function (request, response){
+  const itemid = request.url.slice(1)
+  const idNum = parseInt( itemid, 10)
+  const index = appdata.findIndex (item => item.id === idNum)
+  if (index !== -1){
+    appdata.splice(index, 1)
+    response.writeHead(200, {'Content-Type': 'text/plain '})
+    response.end( JSON.stringify(appdata))
+  }
+  
 }
 
 const sendFile = function( response, filename ) {
